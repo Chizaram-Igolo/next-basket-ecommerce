@@ -82,6 +82,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
                           price={p.price}
                           discountPercentage={p.discountPercentage}
                           thumbnail={p.thumbnail}
+                          stock={p.stock}
                           key={p.id}
                         />{" "}
                       </Link>

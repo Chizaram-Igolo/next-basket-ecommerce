@@ -15,8 +15,12 @@ import { useParams, useRouter, usePathname } from "next/navigation";
 
 const ProductPage = ({ params }: { params: { id: string } }) => {
   let queryId: string | number = params.id.split("-").splice(-1)[0];
+
+  console.log("queryId", queryId);
   let productId = parseInt(queryId);
-  productId = !isNaN(productId) && !productId === null ? productId : 1;
+  console.log("productId", queryId);
+  productId = !isNaN(productId) && productId !== null ? productId : 1;
+  console.log("productId2", productId);
 
   return (
     <div className="sample-ecommerce">

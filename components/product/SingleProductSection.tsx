@@ -5,6 +5,10 @@ import ProductService from "@/utils/apiUtils";
 import React, { useEffect, useState } from "react";
 // import "./style.css";
 
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "@/lib/slices/cartSlice";
+import { RootState } from "@/lib/store";
+
 interface ISingleProductSection {
   productId: number;
 }
@@ -12,6 +16,9 @@ interface ISingleProductSection {
 const SingleProductSection: React.FC<ISingleProductSection> = ({
   productId,
 }) => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+
   const [product, setProduct] = useState<IProduct | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +27,7 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
       try {
         const product = await ProductService.getProduct(productId);
         setProduct(product);
-        console.log(product);
+        console.log("dd", product);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -30,6 +37,37 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
 
     fetchProduct();
   }, []);
+
+  const handleAddToCart = () => {
+    if (product) {
+      // Check if the item is already in the cart
+      const existingItem = cartItems.find((item) => item.id === product.id);
+
+      if (existingItem) {
+        // If the item is already in the cart, add a new instance with a different quantity
+        dispatch(
+          addToCart({
+            id: product.id,
+            title: product.title,
+            thumbnail: product.thumbnail,
+            price: product.price,
+            quantity: existingItem.quantity + 1,
+          })
+        );
+      } else {
+        // If the item is not in the cart, add it with a quantity of 1
+        dispatch(
+          addToCart({
+            id: product.id,
+            title: product.title,
+            thumbnail: product.thumbnail,
+            price: product.price,
+            quantity: 1,
+          })
+        );
+      }
+    }
+  };
 
   return (
     <div className="desktop-product">
@@ -74,7 +112,9 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                 <div className="div-2">
                   <div className="text-wrapper">Availability&nbsp;&nbsp;:</div>
                   <div className="h-3">
-                    {product.stock > 0 ? "In Stock" : "Out of Stock"}
+                    {product.stock !== undefined && product.stock > 0
+                      ? "In Stock"
+                      : "Out of Stock"}
                   </div>
                 </div>
                 <div className="paragraph">{""}</div>
@@ -93,6 +133,8 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                   <img className="img-2" alt="Basket" src="basket.svg" />
                   <img className="img-2" alt="More" src="more.svg" />
                 </div>
+
+                <button onClick={handleAddToCart}>Add to Cart</button>
               </>
             )}
           </div>
