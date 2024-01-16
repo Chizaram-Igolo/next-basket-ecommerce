@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Footer() {
@@ -12,11 +13,23 @@ export default function Footer() {
                   <div className="text-wrapper-3">Bandage</div>
                 </div>
               </div>
-              <img className="img" alt="Col md" src="col-md-3.svg" />
+              <Image
+                className="img"
+                alt="Col md"
+                src="col-md-3.svg"
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           </div>
         </div>
-        <img className="hr" alt="Hr" src="hr.svg" />
+        <Image
+          className="hr"
+          alt="Hr"
+          src="hr.svg"
+          layout="fill"
+          objectFit="contain"
+        />
       </div>
       <div className="div-4">
         <div className="container-7">

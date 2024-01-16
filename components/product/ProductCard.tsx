@@ -14,12 +14,7 @@ const ProductCard: React.FC<IProductCard> = ({
     <div className="product-card-wrapper">
       <div className="product-card">
         <div className="fixed-height-2">
-          <Image
-            src={thumbnail}
-            alt={title}
-            layout="fill"
-            objectFit="contain"
-          />
+          <Image src={thumbnail} alt={title} layout="fill" objectFit="cover" />
         </div>
         <div className="frame-4">
           <div className="product-title">{title}</div>

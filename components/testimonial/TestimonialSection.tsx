@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function TestimonialSection() {
@@ -10,7 +11,13 @@ export default function TestimonialSection() {
             <div className="div-wrapper">
               <div className="card-content-4">
                 <div className="media-circle-box-xs" />
-                <img className="stars" alt="Stars" src="stars.svg" />
+                <Image
+                  className="stars"
+                  alt="Stars"
+                  src="stars.svg"
+                  layout="fill"
+                  objectFit="contain"
+                />
                 <p className="h-6">
                   Slate helps you see how many more days you need to work to{" "}
                   <br />
@@ -25,50 +32,68 @@ export default function TestimonialSection() {
           </div>
           <div className="frame-wrapper">
             <div className="frame-5">
-              <img
+              <Image
                 className="unsplash"
                 alt="Unsplash"
                 src="unsplash-0y8p69vwiym.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-ahyixwrtks"
                 alt="Unsplash"
                 src="unsplash-ah7yixwrtks.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-dxhyiy"
                 alt="Unsplash"
                 src="unsplash-6-dx4h4yi1y.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-ghztzvllodq"
                 alt="Unsplash ghztzvllodq"
                 src="unsplash-ghztzvllodq.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-uutouxqaexk"
                 alt="Unsplash uutouxqaexk"
                 src="unsplash-uutouxqaexk.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-QY"
                 alt="Unsplash QY"
                 src="unsplash-rhn8ff1g-QY.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-joqkbxup"
                 alt="Unsplash"
                 src="unsplash-jo40qkbxup0.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-qlgazvdoo"
                 alt="Unsplash"
                 src="unsplash-qlga5zv3doo.svg"
+                layout="fill"
+                objectFit="contain"
               />
-              <img
+              <Image
                 className="unsplash-rechviy"
                 alt="Unsplash"
                 src="unsplash-1r1echv4i0y.svg"
+                layout="fill"
+                objectFit="contain"
               />
             </div>
           </div>

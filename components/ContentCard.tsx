@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactElement } from "react";
 // import "./style.css";
 
@@ -85,7 +86,7 @@ const ContentCard: React.FC<IContentCard> = ({
             </div>
           </div>
           <div className="frame-2">
-            <img
+            <Image
               className="icon-ant-design-area"
               alt="Icon ant design area"
               src={
@@ -105,6 +106,8 @@ const ContentCard: React.FC<IContentCard> = ({
                   ? "icon-ant-design-area-chart-outlined-7.svg"
                   : iconAntDesignArea
               }
+              layout="fill"
+              objectFit="contain"
             />
             <div className="small-2">
               {!small && <>10 comments</>}
@@ -115,7 +118,7 @@ const ContentCard: React.FC<IContentCard> = ({
         </div>
         <div className="a">
           <div className={`h ${hClassName}`}>Learn More</div>
-          <img
+          <Image
             className="icon-arrow-next"
             alt="Icon arrow next"
             src={
@@ -135,6 +138,8 @@ const ContentCard: React.FC<IContentCard> = ({
                 ? "icon-arrow-next-8.svg"
                 : iconArrowNext
             }
+            layout="fill"
+            objectFit="contain"
           />
         </div>
       </div>

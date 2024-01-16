@@ -37,7 +37,7 @@ export default function HeroSection() {
               </div>
               <div className="overlap-group-wrapper hero-img-div-4">
                 {/* <div className="overlap"> */}
-                {/* <img
+                {/* <Image
                     className="media-bg-cover"
                     alt="Media bg cover"
                     src="./media-bg-cover-2.png"
