@@ -2,10 +2,16 @@ import Button from "@mui/material/Button";
 
 interface IButtonMUI {
   text: string;
+  onClick: () => void;
+  disabled: boolean;
 }
 
-const ButtonMUI: React.FC<IButtonMUI> = ({ text }) => {
-  return <Button variant="outlined">{text}</Button>;
+const ButtonMUI: React.FC<IButtonMUI> = ({ text, onClick, disabled }) => {
+  return (
+    <Button variant="outlined" onClick={onClick} disabled={disabled}>
+      {text}
+    </Button>
+  );
 };
 
 export default ButtonMUI;

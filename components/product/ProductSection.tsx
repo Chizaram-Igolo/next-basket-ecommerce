@@ -6,21 +6,55 @@ import ButtonMUI from "../ButtonMUI";
 import { GetStaticProps } from "next";
 import ProductService from "@/utils/apiUtils";
 import { useEffect, useState } from "react";
-import { useProducts } from "@/hooks/useProducts";
 
 export default function ProductSection() {
   //   const { products } = useProducts();
 
-  const [products, setData] = useState<IProduct[] | []>([]);
+  const [products, setProducts] = useState<IProduct[] | []>([]);
+  const [loading, setLoading] = useState(true);
+  const [skip, setSkip] = useState(0); // Track the number of items to skip for pagination
+  const [hasMore, setHasMore] = useState(true); // Track if there are more products to load
+
+  //   useEffect(() => {
+  //     const fetchData = async () => {
+  //       const products = await ProductService.getProducts();
+  //       setProducts(products);
+  //       console.log("dd", products);
+  //     };
+
+  //     fetchData().catch(console.error);
+  //   }, []);
+
+  const loadMoreProducts = async () => {
+    try {
+      setLoading(true);
+      const newProducts = await ProductService.getProducts(10, skip + 10);
+      if (newProducts.length === 0) {
+        setHasMore(false); // No more products to load
+      } else {
+        setProducts([...products, ...newProducts]); // Append new product to the existing list
+        setSkip(skip + 10); // Increment the skip count
+      }
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const products = await ProductService.getProducts();
-      setData(products);
-      console.log("dd", products);
+    const fetchProducts = async () => {
+      try {
+        const initialProducts = await ProductService.getProducts(10, skip);
+        setProducts(initialProducts);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    fetchData().catch(console.error);
+    fetchProducts();
   }, []);
 
   return (
@@ -41,25 +75,30 @@ export default function ProductSection() {
               <div className="tab-one">
                 <div className="row-2 product-section">
                   {products.length > 0 &&
-                    products
-                      .slice(0, 10)
-                      .map((p) => (
-                        <ProductCard
-                          id={p.id}
-                          title={p.title}
-                          category={p.category}
-                          price={p.price}
-                          discountPercentage={p.discountPercentage}
-                          thumbnail={p.thumbnail}
-                          key={p.id}
-                        />
-                      ))}
+                    products.map((p) => (
+                      <ProductCard
+                        id={p.id}
+                        title={p.title}
+                        category={p.category}
+                        price={p.price}
+                        discountPercentage={p.discountPercentage}
+                        thumbnail={p.thumbnail}
+                        key={p.id}
+                      />
+                    ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <ButtonMUI text="LOAD MORE PRODUCTS" />
+        {loading && <p>Loading...</p>}
+        {hasMore && (
+          <ButtonMUI
+            text="LOAD MORE PRODUCTS"
+            onClick={loadMoreProducts}
+            disabled={loading}
+          />
+        )}
       </div>
     </div>
   );
