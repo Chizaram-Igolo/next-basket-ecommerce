@@ -5,6 +5,9 @@ import ProductService from "@/utils/apiUtils";
 import React, { useEffect, useState } from "react";
 // import "./style.css";
 
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/lib/slices/cartSlice";
 import { addToWishlist, selectWishlist } from "@/lib/slices/wishListSlice";
@@ -19,9 +22,16 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
 }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
+  const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
 
   const [product, setProduct] = useState<IProduct | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const isInCart = cartItems.some((item) => item.id === productId);
+  const isInWishlist = wishlistItems.some((item) => item.id === productId);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -67,7 +77,14 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
           })
         );
       }
+
+      setSnackbarMessage(`${product.title} has been added to the cart!`);
+      setSnackbarOpen(true);
     }
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
   };
 
   const handleAddToWishlist = () => {
@@ -80,6 +97,9 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
           price: product.price,
         })
       );
+
+      setSnackbarMessage(`${product.title} has been added to your wishlist!`);
+      setSnackbarOpen(true);
     }
   };
 
@@ -148,8 +168,33 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                   <img className="img-2" alt="More" src="more.svg" />
                 </div>
 
-                <button onClick={handleAddToCart}>Add to Cart</button>
-                <button onClick={handleAddToWishlist}>Add to Wishlist</button>
+                <button
+                  onClick={handleAddToCart}
+                  disabled={snackbarOpen || isInCart}
+                >
+                  Add to Cart
+                </button>
+                <button
+                  onClick={handleAddToWishlist}
+                  disabled={snackbarOpen || isInWishlist}
+                >
+                  Add to Wishlist
+                </button>
+
+                <Snackbar
+                  open={snackbarOpen}
+                  autoHideDuration={3000} // Adjust the duration as needed
+                  onClose={handleSnackbarClose}
+                  anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                >
+                  <MuiAlert
+                    onClose={handleSnackbarClose}
+                    severity="success"
+                    sx={{ width: "100%" }}
+                  >
+                    {snackbarMessage}
+                  </MuiAlert>
+                </Snackbar>
               </>
             )}
           </div>
