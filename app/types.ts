@@ -6,3 +6,7 @@ export interface IProduct {
   discountPercentage: number;
   thumbnail: string;
 }
+
+export interface ProductSectionProps {
+  products: IProduct[];
+}

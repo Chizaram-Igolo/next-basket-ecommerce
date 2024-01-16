@@ -37,48 +37,13 @@ export default function FeatureSection() {
         </div>
         <div className="row-3">
           {features.map((f) => (
-            <Feature heading={f.heading} text={f.text} image={f.image} />
+            <Feature
+              heading={f.heading}
+              text={f.text}
+              image={f.image}
+              key={f.id}
+            />
           ))}
-          {/* <div className="col-md-3">
-            <div className="card">
-              <img
-                className="icon-cool-icon"
-                alt="Icon cool icon"
-                src="icon-cool-icon-1153.svg"
-              />
-              <div className="feature-title">Easy Wins</div>
-              <p className="paragraph-feature">
-                Get your best looking smile now!
-              </p>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="card">
-              <img
-                className="icon-cool-icon"
-                alt="Icon cool icon"
-                src="icon-cool-icon-153.svg"
-              />
-              <div className="feature-title">Concrete</div>
-              <p className="p">
-                Defalcate is most focused in helping you discover your most
-                beautiful smile
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card">
-              <img
-                className="icon-cool-icon"
-                alt="Icon cool icon"
-                src="icon-cool-icon-125.svg"
-              />
-              <div className="feature-title">Hack Growth</div>
-              <p className="paragraph-feature">
-                Overcame any hurdle or any other problem.
-              </p>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

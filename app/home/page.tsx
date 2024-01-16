@@ -1,6 +1,6 @@
 import React from "react";
 // import { ContentCard } from "./components/ContentCard";
-import "./globals.css";
+import "../globals.css";
 import ProductSection from "@/components/product/ProductSection";
 import FeatureSection from "@/components/feature/FeatureSection";
 import PostSection from "@/components/feature/PostSection";
