@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/lib/slices/cartSlice";
+import { addToWishlist, selectWishlist } from "@/lib/slices/wishListSlice";
 import { RootState } from "@/lib/store";
 
 interface ISingleProductSection {
@@ -66,6 +67,19 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
           })
         );
       }
+    }
+  };
+
+  const handleAddToWishlist = () => {
+    if (product) {
+      dispatch(
+        addToWishlist({
+          id: product.id,
+          title: product.title,
+          thumbnail: product.thumbnail,
+          price: product.price,
+        })
+      );
     }
   };
 
@@ -135,6 +149,7 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                 </div>
 
                 <button onClick={handleAddToCart}>Add to Cart</button>
+                <button onClick={handleAddToWishlist}>Add to Wishlist</button>
               </>
             )}
           </div>
