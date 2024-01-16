@@ -1,7 +1,7 @@
 import React from "react";
 import ContentCard from "../ContentCard";
 
-export default function PostSection() {
+const PostSection = () => {
   return (
     <div className="desktop-blog">
       <div className="container-4">
@@ -81,4 +81,6 @@ export default function PostSection() {
       </div>
     </div>
   );
-}
+};
+
+export default PostSection;

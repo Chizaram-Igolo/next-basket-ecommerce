@@ -5,6 +5,7 @@ export interface IProduct {
   price: number;
   discountPercentage: number;
   thumbnail: string;
+  stock?: number;
 }
 
 export interface ProductSectionProps {

@@ -11,11 +11,23 @@ const ProductService = {
       }
     );
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch products");
-    }
+    if (!response.ok) throw new Error("Failed to fetch products");
 
     const data: IProduct[] = (await response.json()).products;
+    return data;
+  },
+
+  getProduct: async (productId: number): Promise<IProduct> => {
+    const response = await fetch(
+      `${API_BASE_URL}/api/product?productId=${productId}`,
+      {
+        method: "GET",
+      }
+    );
+
+    if (!response.ok) throw new Error("Failed to fetch product");
+
+    const data: IProduct = await response.json();
     return data;
   },
 };

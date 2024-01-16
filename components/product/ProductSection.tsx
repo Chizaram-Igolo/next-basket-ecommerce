@@ -3,27 +3,20 @@
 import { IProduct } from "@/app/types";
 import ProductCard from "./ProductCard";
 import ButtonMUI from "../ButtonMUI";
-import { GetStaticProps } from "next";
 import ProductService from "@/utils/apiUtils";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { makeUrlFriendly } from "@/utils/helperFunctions";
 
-export default function ProductSection() {
-  //   const { products } = useProducts();
+interface IPostSection {
+  isNotHomePage?: boolean;
+}
 
+const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
   const [products, setProducts] = useState<IProduct[] | []>([]);
   const [loading, setLoading] = useState(true);
   const [skip, setSkip] = useState(0); // Track the number of items to skip for pagination
   const [hasMore, setHasMore] = useState(true); // Track if there are more products to load
-
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       const products = await ProductService.getProducts();
-  //       setProducts(products);
-  //       console.log("dd", products);
-  //     };
-
-  //     fetchData().catch(console.error);
-  //   }, []);
 
   const loadMoreProducts = async () => {
     try {
@@ -47,6 +40,7 @@ export default function ProductSection() {
       try {
         const initialProducts = await ProductService.getProducts(10, skip);
         setProducts(initialProducts);
+        console.log(initialProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -76,30 +70,42 @@ export default function ProductSection() {
                 <div className="row-2 product-section">
                   {products.length > 0 &&
                     products.map((p) => (
-                      <ProductCard
-                        id={p.id}
-                        title={p.title}
-                        category={p.category}
-                        price={p.price}
-                        discountPercentage={p.discountPercentage}
-                        thumbnail={p.thumbnail}
-                        key={p.id}
-                      />
+                      <Link
+                        href={`/product/${p.id}`}
+                        as={`/product/${makeUrlFriendly(p.title)}-${p.id}`}
+                        className="no-underline"
+                      >
+                        <ProductCard
+                          id={p.id}
+                          title={p.title}
+                          category={p.category}
+                          price={p.price}
+                          discountPercentage={p.discountPercentage}
+                          thumbnail={p.thumbnail}
+                          key={p.id}
+                        />{" "}
+                      </Link>
                     ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {loading && <p>Loading...</p>}
-        {hasMore && (
-          <ButtonMUI
-            text="LOAD MORE PRODUCTS"
-            onClick={loadMoreProducts}
-            disabled={loading}
-          />
+        {!isNotHomePage && (
+          <div>
+            {loading && <p>Loading...</p>}
+            {hasMore && (
+              <ButtonMUI
+                text="LOAD MORE PRODUCTS"
+                onClick={loadMoreProducts}
+                disabled={loading}
+              />
+            )}
+          </div>
         )}
       </div>
     </div>
   );
-}
+};
+
+export default ProductSection;
