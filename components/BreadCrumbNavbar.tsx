@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function BreadCrumbNavbar() {
   return (
     <div className="container">
@@ -5,11 +7,13 @@ export default function BreadCrumbNavbar() {
         <div className="col-md">
           <div className="breadcrumb">
             <div className="link">Home</div>
-            <img
+            {/* <Image
               className="icn-arrow-right-icn"
               alt="Icn arrow right icn"
-              src="icn-arrow-right-icn-xs.svg"
-            />
+              src="/icn-arrow-right-icn-xs.svg"
+              layout="fill"
+              objectFit="contain"
+            /> */}
             <div className="h">Shop</div>
           </div>
         </div>

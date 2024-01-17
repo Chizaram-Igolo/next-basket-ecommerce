@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function ProductNavbar() {
@@ -23,7 +24,13 @@ export default function ProductNavbar() {
           </div>
         </div>
       </div>
-      <img className="line" alt="Line" src="line-1.svg" />
+      <Image
+        className="line"
+        alt="Line"
+        src="/line-1.svg"
+        layout="fill"
+        objectFit="contain"
+      />
     </div>
   );
 }

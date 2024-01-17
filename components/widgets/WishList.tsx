@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { removeFromWishlist } from "@/lib/slices/wishListSlice";
+import Image from "next/image";
 interface WishlistProps {
   onClose: () => void;
 }
@@ -19,7 +20,12 @@ const Wishlist: React.FC<WishlistProps> = ({ onClose }) => {
       <ul>
         {wishlistItems.map((item) => (
           <li key={item.id}>
-            <img src={item.thumbnail} alt={item.title} />
+            <Image
+              src={item.thumbnail}
+              alt={item.title}
+              layout="fill"
+              objectFit="contain"
+            />
             <div>{item.title}</div>
             <div>Price: ${item.price.toFixed(2)}</div>
             <button onClick={() => handleRemoveFromWishlist(item.id)}>

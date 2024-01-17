@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function SinglePost() {
@@ -14,7 +15,13 @@ export default function SinglePost() {
                 Excitation venial consequent sent nostrum met.
               </p>
               <div className="list-row">
-                <img className="line" alt="Line" src="line-2.svg" />
+                <Image
+                  className="line"
+                  alt="Line"
+                  src="/line-2.svg"
+                  layout="fill"
+                  objectFit="contain"
+                />
                 <p className="p">
                   Met minim Mollie non desert Alamo est sit cliquey dolor do met
                   sent. RELIT official consequent door ENIM RELIT Mollie.
@@ -32,10 +39,12 @@ export default function SinglePost() {
             <div className="overlap-group-wrapper">
               <div className="overlap-group">
                 <div className="unsplash" />
-                <img
+                <Image
                   className="unsplash-qanofijlfs"
                   alt="Unsplash"
-                  src="unsplash-qanof9ijlfs.png"
+                  src="/unsplash-qanof9ijlfs.png"
+                  layout="fill"
+                  objectFit="contain"
                 />
               </div>
             </div>

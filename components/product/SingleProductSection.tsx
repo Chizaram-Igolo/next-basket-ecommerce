@@ -10,8 +10,9 @@ import MuiAlert from "@mui/material/Alert";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/lib/slices/cartSlice";
-import { addToWishlist, selectWishlist } from "@/lib/slices/wishListSlice";
+import { addToWishlist } from "@/lib/slices/wishListSlice";
 import { RootState } from "@/lib/store";
+import Image from "next/image";
 
 interface ISingleProductSection {
   productId: number;
@@ -109,39 +110,51 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
         <div className="row">
           <div className="col-md">
             <div className="carousel">
-              <div className="overlap-group">
+              {/* <div className="overlap-group">
                 <div className="carousel-inner">
                   <div className="carousel-item" />
                 </div>
-                <img
+                <Image
                   className="carousel-control"
                   alt="Carousel control"
-                  src="carousel-control-next.svg"
+                  src="/carousel-control-next.svg"
+                  layout="fill"
+                  objectFit="contain"
                 />
-                <img
+                <Image
                   className="img"
                   alt="Carousel control"
-                  src="carousel-control-prev.svg"
+                  src="/carousel-control-prev.svg"
+                  layout="fill"
+                  objectFit="contain"
                 />
-              </div>
-              <div className="carousel-indicators">
-                <img
+              </div> */}
+              {/* <div className="carousel-indicators">
+                <Image
                   className="carousel-captions"
                   alt="Carousel captions"
-                  src="carousel-captions.png"
+                  src="/carousel-captions.png"
+                  layout="fill"
+                  objectFit="contain"
                 />
                 <div className="div" />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-md-2">
             {product && (
               <>
                 <div className="h">{product.title}</div>
-                <div className="frame">
-                  <img className="stars" alt="Stars" src="stars.svg" />
+                {/* <div className="frame">
+                  <Image
+                    className="stars"
+                    alt="Stars"
+                    src="/stars.svg"
+                    layout="fill"
+                    objectFit="contain"
+                  />
                   <div className="text-wrapper">10 Reviews</div>
-                </div>
+                </div> */}
                 <div className="h-2">${product.price}</div>
                 <div className="div-2">
                   <div className="text-wrapper">Availability&nbsp;&nbsp;:</div>
@@ -152,21 +165,39 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                   </div>
                 </div>
                 <div className="paragraph">{""}</div>
-                <img className="hr" alt="Hr" src="hr.svg" />
+                {/* <Image className="hr" alt="Hr" src="/hr.svg" /> */}
                 <div className="product-colors">
                   <div className="ellipse" />
                   <div className="ellipse-2" />
                   <div className="ellipse-3" />
                   <div className="ellipse-4" />
                 </div>
-                <div className="product-actions">
+                {/* <div className="product-actions">
                   <div className="btn-primary-color">
                     <div className="h-4">Select Options</div>
                   </div>
-                  <img className="img-2" alt="Like" src="like.svg" />
-                  <img className="img-2" alt="Basket" src="basket.svg" />
-                  <img className="img-2" alt="More" src="more.svg" />
-                </div>
+                  <Image
+                    className="img-2"
+                    alt="Like"
+                    src="/like.svg"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                  <Image
+                    className="img-2"
+                    alt="Basket"
+                    src="/basket.svg"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                  <Image
+                    className="img-2"
+                    alt="More"
+                    src="/more.svg"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div> */}
 
                 <button
                   onClick={handleAddToCart}

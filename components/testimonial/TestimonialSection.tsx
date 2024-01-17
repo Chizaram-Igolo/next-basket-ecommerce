@@ -14,7 +14,7 @@ export default function TestimonialSection() {
                 <Image
                   className="stars"
                   alt="Stars"
-                  src="stars.svg"
+                  src="/stars.svg"
                   layout="fill"
                   objectFit="contain"
                 />
@@ -35,63 +35,63 @@ export default function TestimonialSection() {
               <Image
                 className="unsplash"
                 alt="Unsplash"
-                src="unsplash-0y8p69vwiym.svg"
+                src="/unsplash-0y8p69vwiym.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-ahyixwrtks"
                 alt="Unsplash"
-                src="unsplash-ah7yixwrtks.svg"
+                src="/unsplash-ah7yixwrtks.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-dxhyiy"
                 alt="Unsplash"
-                src="unsplash-6-dx4h4yi1y.svg"
+                src="/unsplash-6-dx4h4yi1y.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-ghztzvllodq"
                 alt="Unsplash ghztzvllodq"
-                src="unsplash-ghztzvllodq.svg"
+                src="/unsplash-ghztzvllodq.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-uutouxqaexk"
                 alt="Unsplash uutouxqaexk"
-                src="unsplash-uutouxqaexk.svg"
+                src="/unsplash-uutouxqaexk.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-QY"
                 alt="Unsplash QY"
-                src="unsplash-rhn8ff1g-QY.svg"
+                src="/unsplash-rhn8ff1g-QY.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-joqkbxup"
                 alt="Unsplash"
-                src="unsplash-jo40qkbxup0.svg"
+                src="/unsplash-jo40qkbxup0.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-qlgazvdoo"
                 alt="Unsplash"
-                src="unsplash-qlga5zv3doo.svg"
+                src="/unsplash-qlga5zv3doo.svg"
                 layout="fill"
                 objectFit="contain"
               />
               <Image
                 className="unsplash-rechviy"
                 alt="Unsplash"
-                src="unsplash-1r1echv4i0y.svg"
+                src="/unsplash-1r1echv4i0y.svg"
                 layout="fill"
                 objectFit="contain"
               />

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { removeFromCart, updateQuantity } from "@/lib/slices/cartSlice";
 import { ICartItem } from "@/app/types";
+import Image from "next/image";
 
 const Cart = ({ onClose }: { onClose: () => void }) => {
   const dispatch = useDispatch();
@@ -28,7 +29,12 @@ const Cart = ({ onClose }: { onClose: () => void }) => {
           <ul>
             {itemsWithTitle.map(({ id, title, thumbnail, price, quantity }) => (
               <li key={`${id}-${title}`}>
-                <img src={thumbnail} alt={title} />
+                <Image
+                  src={thumbnail}
+                  alt={title}
+                  layout="fill"
+                  objectFit="contain"
+                />
                 <div>Price: ${price.toFixed(2)}</div>
                 <div>Quantity: {quantity}</div>
                 <button

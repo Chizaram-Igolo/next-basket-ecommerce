@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Navbar() {
@@ -16,7 +17,13 @@ export default function Navbar() {
           <div className="dropdown">
             <div className="dropdown-toggle">
               <div className="category">Shop</div>
-              <img className="vector" alt="Vector" src="vector.svg" />
+              <Image
+                className="vector"
+                alt="Vector"
+                src="/vector.svg"
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           </div>
           <div className="a-wrapper">
@@ -44,23 +51,33 @@ export default function Navbar() {
           <div className="li-3">
             <div className="btn-wrapper">
               <button className="btn">
-                <img
+                <Image
                   className="icn-settings-icn-xs"
                   alt="Icn settings icn xs"
-                  src="icn-settings-icn-xs.svg"
+                  src="/icn-settings-icn-xs.svg"
+                  layout="fill"
+                  objectFit="contain"
                 />
                 <div className="text-wrapper-2">Login / Register</div>
               </button>
             </div>
           </div>
-          <img className="img" alt="Li" src="li.svg" />
+          <Image
+            className="img"
+            alt="Li"
+            src="/li.svg"
+            layout="fill"
+            objectFit="contain"
+          />
           <div className="li-4">
             <div className="a-2">
               <button className="btn">
-                <img
+                <Image
                   className="icn-settings-icn-xs-2"
                   alt="Icn settings icn xs"
-                  src="image.svg"
+                  src="/image.svg"
+                  layout="fill"
+                  objectFit="contain"
                 />
                 <div className="text-wrapper-3">1</div>
               </button>
@@ -69,10 +86,12 @@ export default function Navbar() {
           <div className="li-4">
             <div className="a-2">
               <button className="btn">
-                <img
+                <Image
                   className="icn-settings-icn-xs-2"
                   alt="Icn settings icn xs"
-                  src="icn-settings-icn-xs-2.svg"
+                  src="/icn-settings-icn-xs-2.svg"
+                  layout="fill"
+                  objectFit="contain"
                 />
                 <div className="text-wrapper-3">1</div>
               </button>

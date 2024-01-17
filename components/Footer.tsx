@@ -13,23 +13,23 @@ export default function Footer() {
                   <div className="text-wrapper-3">Bandage</div>
                 </div>
               </div>
-              <Image
+              {/* <Image
                 className="img"
                 alt="Col md"
-                src="col-md-3.svg"
+                src="/col-md-3.svg"
                 layout="fill"
                 objectFit="contain"
-              />
+              /> */}
             </div>
           </div>
         </div>
-        <Image
+        {/* <Image
           className="hr"
           alt="Hr"
-          src="hr.svg"
+          src="/hr.svg"
           layout="fill"
           objectFit="contain"
-        />
+        /> */}
       </div>
       <div className="div-4">
         <div className="container-7">
