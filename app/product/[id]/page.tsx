@@ -1,36 +1,27 @@
 "use client";
 
 import React from "react";
-// import { ContentCard } from "./components/ContentCard";
 import "../../globals.css";
 import ProductSection from "@/components/product/ProductSection";
-import FeatureSection from "@/components/feature/FeatureSection";
-import PostSection from "@/components/feature/PostSection";
-import TestimonialSection from "@/components/testimonial/TestimonialSection";
-import CTASection from "@/components/CTASection";
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
 import SingleProductSection from "@/components/product/SingleProductSection";
-import { useParams, useRouter, usePathname } from "next/navigation";
+import BreadCrumbNavbar from "@/components/BreadCrumbNavbar";
+import ProductNavbar from "@/components/ProductNavbar";
+import SinglePost from "@/components/SinglePost";
+import ClientsSection from "@/components/ClientsSection";
 
 const ProductPage = ({ params }: { params: { id: string } }) => {
   let queryId: string | number = params.id.split("-").splice(-1)[0];
-
-  console.log("queryId", queryId);
   let productId = parseInt(queryId);
-  console.log("productId", queryId);
   productId = !isNaN(productId) && productId !== null ? productId : 1;
-  console.log("productId2", productId);
 
   return (
     <div className="sample-ecommerce">
+      <BreadCrumbNavbar />
       <SingleProductSection productId={productId} />
+      <ProductNavbar />
+      <SinglePost />
       <ProductSection isNotHomePage={true} />
-      <FeatureSection />
-      <PostSection />
-      {/* <TestimonialSection /> */}
-      <CTASection />
-      <Footer />
+      <ClientsSection />
     </div>
   );
 };

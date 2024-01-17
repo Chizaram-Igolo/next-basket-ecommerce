@@ -1,26 +1,23 @@
-import React from "react";
-// import { ContentCard } from "./components/ContentCard";
+import React from "react"; 
 import "../globals.css";
 import ProductSection from "@/components/product/ProductSection";
 import FeatureSection from "@/components/feature/FeatureSection";
 import PostSection from "@/components/feature/PostSection";
 import TestimonialSection from "@/components/testimonial/TestimonialSection";
 import CTASection from "@/components/CTASection";
-import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection"; 
 
-const IndexPage = () => {
+const HomePage = () => {
   return (
     <div className="sample-ecommerce">
       <HeroSection />
       <ProductSection />
       <FeatureSection />
       <PostSection />
-      {/* <TestimonialSection /> */}
+      <TestimonialSection />
       <CTASection />
-      <Footer />
     </div>
   );
 };
 
-export default IndexPage;
+export default HomePage;

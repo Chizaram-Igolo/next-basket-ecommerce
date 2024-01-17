@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { ReactElement } from "react";
-// import "./style.css";
 
 interface IContentCard {
   rounded: boolean;
