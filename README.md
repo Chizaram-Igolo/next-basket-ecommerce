@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Simple E-commerce Website
 
-## Getting Started
+This project is a frontend implementation of a simple e-commerce website, where all API endpoints are provided by [dummyjson.com/docs](https://dummyjson.com/docs) features include two main pages, popups for the cart and wishlist, and persistent cart and wishlist data.
 
-First, run the development server:
+## Features
+
+### Pages
+
+#### 1. Homepage
+
+- Initial landing page with a mix of static and dynamic content.
+- Dynamic product list section from [dummyjson.com/products](https://dummyjson.com/products).
+- Pagination on the same page by clicking "Load More Products" without refreshing.
+- Responsive design with static header, footer, and additional sections.
+
+#### 2. Product Details Page
+
+- Dynamic and static sections.
+- Product content fetched from [dummyjson.com/products/{id}](https://dummyjson.com/products/{id}).
+- Best-seller product section (same as homepage but not paginated).
+- Users can add products to their cart and wishlist with snackbar confirmation messages.
+- Buttons are disabled after adding items to the cart or wishlist.
+
+### Popups
+
+#### 1. Cart Popup
+
+- Accessible from the header.
+- Displays the user's cart with the total amount.
+- Allows users to manage quantities and remove items.
+
+#### 2. Wishlist Popup
+
+- Similar to the cart popup, displaying items added to the wishlist.
+- Users can remove items from their wishlist.
+
+### Data Persistence
+
+- Cart and wishlist data are persistent across page refreshes or reopenings.
+
+## How to Run
+
+1. Clone the repository.
+
+```bash
+https://github.com/Chizaram-Igolo/next-basket-ecommerce.git
+```
+
+2. Open the project in your preferred code editor.
+
+```bash
+npm install
+```
+
+3. Run the application.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Project Task List
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [x] **Home Page**
+- [x] **Product Page**
+- [x] **API Consumption**
+- [x] **Same Page Pagination ("Show More Products")**
+- [x] **Uses Next.js, Redux Toolkit, Material UI, etc.**
+- [x] **Cart Functionality (Create, Read, Update, Delete)**
+- [x] **Wishlist Functionality (CRUD)**
+- [x] **Data Persistence**
+- [x] **Snackbar Notification**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Project Dependencies
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [@mui/material](https://www.npmjs.com/package/@mui/material)
+- [@reduxjs/toolkit](https://www.npmjs.com/package/@reduxjs/toolkit)
+- [react-redux](https://www.npmjs.com/package/react-redux)
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss)
+- [typescript](https://www.npmjs.com/package/typescript)
