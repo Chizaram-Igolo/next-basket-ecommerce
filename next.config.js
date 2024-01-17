@@ -10,6 +10,20 @@ const nextConfig = {
       },
     ],
   },
+
+  async headers() {
+    return [
+      {
+        source: "http://localhost:3000/api/:path*",
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "https://next-basket-five.vercel.app",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
