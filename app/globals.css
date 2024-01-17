@@ -1991,3 +1991,224 @@ body {
 .content-card.padding-false.rounded-true.small-true .paragraph-post {
   margin-right: -2px;
 }
+
+/* Navbar */
+.navbar-light {
+  height: 58px;
+  position: relative;
+  width: 1437px;
+}
+
+.navbar-light .navbar-brand {
+  height: 58px;
+  left: 38px;
+  position: absolute;
+  top: 0;
+  width: 187px;
+}
+
+.navbar-light .text-wrapper {
+  color: var(--text-color);
+  font-family: var(--h-3-font-family);
+  font-size: var(--h-3-font-size);
+  font-style: var(--h-3-font-style);
+  font-weight: var(--h-3-font-weight);
+  left: 0;
+  letter-spacing: var(--h-3-letter-spacing);
+  line-height: var(--h-3-line-height);
+  position: absolute;
+  top: 12px;
+  white-space: nowrap;
+}
+
+.navbar-light .collapse-navbar {
+  height: 58px;
+  left: 265px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 1155px;
+}
+
+.navbar-light .navbar-nav {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 15px;
+  left: 0;
+  position: absolute;
+  top: 16px;
+}
+
+.navbar-light .li {
+  height: 24px;
+  position: relative;
+  width: 43px;
+}
+
+.navbar-light .a {
+  height: 24px;
+  position: relative;
+}
+
+.navbar-light .link {
+  color: var(--second-text-color);
+  font-family: "Montserrat-Bold", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0.2px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  white-space: nowrap;
+}
+
+.navbar-light .dropdown {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.navbar-light .dropdown-toggle {
+  height: 25px;
+  overflow: hidden;
+  position: relative;
+  width: 63px;
+}
+
+.navbar-light .category {
+  color: var(--text-color);
+  font-family: "Montserrat-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  left: 6px;
+  letter-spacing: 0.2px;
+  line-height: 28px;
+  position: absolute;
+  top: -2px;
+  white-space: nowrap;
+}
+
+.navbar-light .vector {
+  height: 6px;
+  left: 53px;
+  position: absolute;
+  top: 10px;
+  width: 10px;
+}
+
+.navbar-light .a-wrapper {
+  height: 24px;
+  position: relative;
+  width: 45px;
+}
+
+.navbar-light .div-wrapper {
+  height: 24px;
+  position: relative;
+  width: 33px;
+}
+
+.navbar-light .div {
+  height: 24px;
+  position: relative;
+  width: 58px;
+}
+
+.navbar-light .li-2 {
+  height: 24px;
+  position: relative;
+  width: 44px;
+}
+
+.navbar-light .navbar-nav-2 {
+  align-items: center;
+  display: inline-flex;
+  left: 832px;
+  position: absolute;
+  top: 2px;
+}
+
+.navbar-light .li-3 {
+  height: 54px;
+  position: relative;
+  width: 166px;
+}
+
+.navbar-light .btn-wrapper {
+  height: 54px;
+}
+
+.navbar-light .btn {
+  all: unset;
+  align-items: center;
+  border-radius: 37px;
+  box-sizing: border-box;
+  display: inline-flex;
+  gap: 5px;
+  overflow: hidden;
+  padding: 15px;
+  position: relative;
+}
+
+.navbar-light .icn-settings-icn-xs {
+  height: 12px;
+  position: relative;
+  width: 12px;
+}
+
+.navbar-light .text-wrapper-2 {
+  color: var(--primary-color);
+  font-family: var(--link-font-family);
+  font-size: var(--link-font-size);
+  font-style: var(--link-font-style);
+  font-weight: var(--link-font-weight);
+  letter-spacing: var(--link-letter-spacing);
+  line-height: var(--link-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.navbar-light .img {
+  height: 46px;
+  position: relative;
+  width: 46px;
+}
+
+.navbar-light .li-4 {
+  height: 46px;
+  position: relative;
+  width: 56px;
+}
+
+.navbar-light .a-2 {
+  height: 46px;
+}
+
+.navbar-light .icn-settings-icn-xs-2 {
+  height: 16px;
+  position: relative;
+  width: 16px;
+}
+
+.navbar-light .text-wrapper-3 {
+  color: var(--primary-color);
+  font-family: var(--small-font-family);
+  font-size: var(--small-font-size);
+  font-style: var(--small-font-style);
+  font-weight: var(--small-font-weight);
+  letter-spacing: var(--small-letter-spacing);
+  line-height: var(--small-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
