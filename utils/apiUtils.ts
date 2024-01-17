@@ -1,6 +1,11 @@
 import { IProduct } from "@/app/types";
 
-const API_BASE_URL = "http://localhost:3000";
+// Check if we are in a production environment
+const isProduction = process.env.NODE_ENV === "production";
+
+const API_BASE_URL = isProduction
+  ? "https://next-basket-five.vercel.app"
+  : "http://localhost:3000";
 
 const ProductService = {
   getProducts: async (limit: number, skip: number): Promise<IProduct[]> => {

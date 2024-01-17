@@ -26,6 +26,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
         setHasMore(false); // No more products to load
       } else {
         setProducts([...products, ...newProducts]); // Append new product to the existing list
+        console.log(products);
         setSkip(skip + 10); // Increment the skip count
       }
     } catch (error) {
@@ -38,9 +39,8 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const initialProducts = await ProductService.getProducts(10, skip);
+        const initialProducts = await ProductService.getProducts(10, 0);
         setProducts(initialProducts);
-        console.log(initialProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
@@ -49,7 +49,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
     };
 
     fetchProducts();
-  }, [skip]);
+  }, []);
 
   return (
     <div className="desktop-product">
