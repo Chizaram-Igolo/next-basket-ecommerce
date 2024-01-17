@@ -49,7 +49,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
     };
 
     fetchProducts();
-  }, []);
+  }, [skip]);
 
   return (
     <div className="desktop-product">
@@ -74,6 +74,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
                         href={`/product/${p.id}`}
                         as={`/product/${makeUrlFriendly(p.title)}-${p.id}`}
                         className="no-underline"
+                        key={p.title + p.id}
                       >
                         <ProductCard
                           id={p.id}
@@ -83,7 +84,6 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
                           discountPercentage={p.discountPercentage}
                           thumbnail={p.thumbnail}
                           stock={p.stock}
-                          key={p.id}
                         />{" "}
                       </Link>
                     ))}

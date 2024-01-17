@@ -48,7 +48,7 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
     };
 
     fetchProduct();
-  }, []);
+  }, [productId]);
 
   const handleAddToCart = () => {
     if (product) {
