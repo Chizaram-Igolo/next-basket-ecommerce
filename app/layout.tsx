@@ -29,12 +29,14 @@ export default function RootLayout({
     <Providers>
       <html lang="en">
         <body className={montserrat.variable}>
-          <BannerBar />
-          <Navbar />
-          <Header />
-          {children}
+          <div className="page-container">
+            {/* <BannerBar /> */}
+            <Navbar />
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </body>
-        <Footer />
       </html>
     </Providers>
   );

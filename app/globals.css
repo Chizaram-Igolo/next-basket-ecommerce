@@ -40,10 +40,15 @@ body {
 html,
 body {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   /* position: relative; */
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+}
+
+.page-container {
+  min-height: 100vh;
+  position: relative;
 }
 
 /* BannerBar */
@@ -236,7 +241,7 @@ body {
 
 .sample-ecommerce {
   width: 100%;
-  height: 916px;
+  min-height: 916px;
   /* position: relative; */
   /* align-items: flex-start;
   background-color: #ffffff;
@@ -2214,10 +2219,13 @@ body {
 }
 
 /* Bandage */
-.div {
+.div .footer-div {
   background-color: var(--light-gray-1);
   height: 142px;
   width: 1440px;
+  position: absolute;
+  bottom: 0;
+  border: 2px solid;
 }
 
 .div .container {
