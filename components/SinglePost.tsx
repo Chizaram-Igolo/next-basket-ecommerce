@@ -14,13 +14,15 @@ export default function SinglePost() {
                 sent. RELIT official consequent door ENIM RELIT Mollie.
                 Excitation venial consequent sent nostrum met.
               </p>
-              <div className="list-row">
+              <div className="list-row relative">
                 <Image
                   className="line"
                   alt="Line"
                   src="/line-2.svg"
                   layout="fill"
-                  objectFit="contain"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
                 <p className="p">
                   Met minim Mollie non desert Alamo est sit cliquey dolor do met
@@ -37,14 +39,16 @@ export default function SinglePost() {
           </div>
           <div className="card-item-wrapper">
             <div className="overlap-group-wrapper">
-              <div className="overlap-group">
+              <div className="overlap-group relative">
                 <div className="unsplash" />
                 <Image
                   className="unsplash-qanofijlfs"
                   alt="Unsplash"
                   src="/unsplash-qanof9ijlfs.png"
                   layout="fill"
-                  objectFit="contain"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
               </div>
             </div>

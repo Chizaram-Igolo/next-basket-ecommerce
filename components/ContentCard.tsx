@@ -84,7 +84,7 @@ const ContentCard: React.FC<IContentCard> = ({
               {small && padding && <>22 Ap...</>}
             </div>
           </div>
-          <div className="frame-2">
+          <div className="frame-2 relative">
             <Image
               className="icon-ant-design-area"
               alt="Icon ant design area"
@@ -106,7 +106,9 @@ const ContentCard: React.FC<IContentCard> = ({
                   : iconAntDesignArea
               }
               layout="fill"
-              objectFit="contain"
+              style={{
+                objectFit: "contain",
+              }}
             />
             <div className="small-2">
               {!small && <>10 comments</>}
@@ -115,7 +117,7 @@ const ContentCard: React.FC<IContentCard> = ({
             </div>
           </div>
         </div>
-        <div className="a">
+        <div className="a relative">
           <div className={`h ${hClassName}`}>Learn More</div>
           <Image
             className="icon-arrow-next"
@@ -138,7 +140,9 @@ const ContentCard: React.FC<IContentCard> = ({
                 : iconArrowNext
             }
             layout="fill"
-            objectFit="contain"
+            style={{
+              objectFit: "contain",
+            }}
           />
         </div>
       </div>

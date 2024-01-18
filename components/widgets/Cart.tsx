@@ -28,12 +28,14 @@ const Cart = ({ onClose }: { onClose: () => void }) => {
           <h3>{title}</h3>
           <ul>
             {itemsWithTitle.map(({ id, title, thumbnail, price, quantity }) => (
-              <li key={`${id}-${title}`}>
+              <li key={`${id}-${title}`} className="relative">
                 <Image
                   src={thumbnail}
                   alt={title}
                   layout="fill"
-                  objectFit="contain"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
                 <div>Price: ${price.toFixed(2)}</div>
                 <div>Quantity: {quantity}</div>

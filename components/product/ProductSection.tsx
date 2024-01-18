@@ -5,8 +5,6 @@ import ProductCard from "./ProductCard";
 import ButtonMUI from "../ButtonMUI";
 import ProductService from "@/utils/apiUtils";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { makeUrlFriendly } from "@/utils/helperFunctions";
 
 interface IPostSection {
   isNotHomePage?: boolean;
@@ -52,48 +50,40 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
   }, []);
 
   return (
-    <div className="desktop-product">
-      <div className="container-2">
-        <div className="main-content-wrapper">
-          <div className="main-content">
-            <div className="section-title">Featured Products</div>
-            <div className="h-section-title">BESTSELLER PRODUCTS</div>
-            <p className="paragraph">
-              Problems trying to resolve the conflict between
-            </p>
-          </div>
-        </div>
-        <div className="product-tab-tab-wrapper">
-          <div className="product-tab-tab">
-            <div className="tab-content">
-              <div className="tab-one">
-                <div className="row-2 product-section">
-                  {products.length > 0 &&
-                    products.map((p) => (
-                      <Link
-                        href={`/product/${p.id}`}
-                        as={`/product/${makeUrlFriendly(p.title)}-${p.id}`}
-                        className="no-underline"
-                        key={p.title + p.id}
-                      >
-                        <ProductCard
-                          id={p.id}
-                          title={p.title}
-                          category={p.category}
-                          price={p.price}
-                          discountPercentage={p.discountPercentage}
-                          thumbnail={p.thumbnail}
-                          stock={p.stock}
-                        />{" "}
-                      </Link>
-                    ))}
-                </div>
-              </div>
+    <div className="w-screen justify-center items-center bg-white flex flex-col px-16 max-md:px-5">
+      <div className="w-full items-stretch flex max-w-[1124px] flex-col pl-4 pr-6 py-12 max-md:max-w-full max-md:pr-5">
+        <div className="items-center self-center flex w-[691px] max-w-full flex-col justify-center mt-8 px-16 max-md:px-5">
+          <span className="flex flex-col items-stretch">
+            <div className="text-neutral-500 text-center text-xl leading-8 tracking-wide self-center whitespace-nowrap">
+              Featured Products
             </div>
-          </div>
+            <div className="text-slate-800 text-center text-2xl font-bold leading-8 tracking-normal self-center whitespace-nowrap mt-2.5">
+              BESTSELLER PRODUCTS
+            </div>
+            <div className="text-neutral-500 text-center text-sm leading-5 tracking-wide whitespace-nowrap mt-2.5">
+              Problems trying to resolve the conflict between{" "}
+            </div>
+          </span>
         </div>
+        {/* <div className="items-stretch flex flex-col mt-8 p-6 max-md:max-w-full max-md:px-5"> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 gap-5 p-6 mt-4 max-md:max-w-full">
+          {products.length > 0 &&
+            products.map((p, idx) => (
+              <ProductCard
+                id={p.id}
+                title={p.title}
+                category={p.category}
+                price={p.price}
+                discountPercentage={p.discountPercentage}
+                thumbnail={p.thumbnail}
+                stock={p.stock}
+                idx={idx}
+              />
+            ))}
+        </div>
+
         {!isNotHomePage && (
-          <div>
+          <div className="mx-auto mt-32">
             {loading && <p>Loading...</p>}
             {hasMore && (
               <ButtonMUI

@@ -58,11 +58,11 @@ export default function Footer() {
                   <div className="form-control-input">
                     <div className="text-wrapper-2">Your Email</div>
                   </div>
-                  <button className="input-group-append">
+                  <div className="input-group-append">
                     <button className="btn">
                       <div className="input-group-text">Subscribe</div>
                     </button>
-                  </button>
+                  </div>
                 </div>
               </div>
               <p className="form-text">Lore imp sum dolor Amit</p>

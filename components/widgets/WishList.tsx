@@ -19,12 +19,14 @@ const Wishlist: React.FC<WishlistProps> = ({ onClose }) => {
       <h2>Your Wishlist</h2>
       <ul>
         {wishlistItems.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="relative">
             <Image
               src={item.thumbnail}
               alt={item.title}
               layout="fill"
-              objectFit="contain"
+              style={{
+                objectFit: "contain",
+              }}
             />
             <div>{item.title}</div>
             <div>Price: ${item.price.toFixed(2)}</div>

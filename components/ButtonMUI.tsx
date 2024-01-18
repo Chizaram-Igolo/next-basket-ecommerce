@@ -6,7 +6,12 @@ interface IButtonMUI {
   disabled: boolean;
 }
 
-const ButtonMUI: React.FC<IButtonMUI> = ({ text, onClick, disabled }) => {
+const ButtonMUI: React.FC<IButtonMUI> = ({
+  text,
+  onClick,
+  disabled,
+  className,
+}) => {
   return (
     <Button variant="outlined" onClick={onClick} disabled={disabled}>
       {text}

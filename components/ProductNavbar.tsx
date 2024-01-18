@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ProductNavbar() {
   return (
-    <div className="navbar-style">
+    <div className="navbar-style relative">
       <div className="nav">
         <div className="li">
           <div className="a">
@@ -29,7 +29,9 @@ export default function ProductNavbar() {
         alt="Line"
         src="/line-1.svg"
         layout="fill"
-        objectFit="contain"
+        style={{
+          objectFit: "contain",
+        }}
       />
     </div>
   );

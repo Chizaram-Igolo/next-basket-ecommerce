@@ -119,14 +119,14 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                   alt="Carousel control"
                   src="/carousel-control-next.svg"
                   layout="fill"
-                  objectFit="contain"
+                  
                 />
                 <Image
                   className="img"
                   alt="Carousel control"
                   src="/carousel-control-prev.svg"
                   layout="fill"
-                  objectFit="contain"
+                  
                 />
               </div> */}
               {/* <div className="carousel-indicators">
@@ -135,7 +135,7 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                   alt="Carousel captions"
                   src="/carousel-captions.png"
                   layout="fill"
-                  objectFit="contain"
+                  
                 />
                 <div className="div" />
               </div> */}
@@ -151,7 +151,7 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                     alt="Stars"
                     src="/stars.svg"
                     layout="fill"
-                    objectFit="contain"
+                    
                   />
                   <div className="text-wrapper">10 Reviews</div>
                 </div> */}
@@ -181,21 +181,21 @@ const SingleProductSection: React.FC<ISingleProductSection> = ({
                     alt="Like"
                     src="/like.svg"
                     layout="fill"
-                    objectFit="contain"
+                    
                   />
                   <Image
                     className="img-2"
                     alt="Basket"
                     src="/basket.svg"
                     layout="fill"
-                    objectFit="contain"
+                    
                   />
                   <Image
                     className="img-2"
                     alt="More"
                     src="/more.svg"
                     layout="fill"
-                    objectFit="contain"
+                    
                   />
                 </div> */}
 

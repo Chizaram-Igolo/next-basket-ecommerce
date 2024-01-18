@@ -12,7 +12,7 @@ export default function BreadCrumbNavbar() {
               alt="Icn arrow right icn"
               src="/icn-arrow-right-icn-xs.svg"
               layout="fill"
-              objectFit="contain"
+              
             /> */}
             <div className="h">Shop</div>
           </div>
