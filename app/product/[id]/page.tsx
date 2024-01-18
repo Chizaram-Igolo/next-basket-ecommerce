@@ -5,9 +5,7 @@ import "../../globals.css";
 import ProductSection from "@/components/product/ProductSection";
 import SingleProductSection from "@/components/product/SingleProductSection";
 import BreadCrumbNavbar from "@/components/BreadCrumbNavbar";
-import ProductNavbar from "@/components/ProductNavbar";
 import SinglePost from "@/components/SinglePost";
-// import ClientsSection from "@/components/ClientsSection";
 
 const ProductPage = ({ params }: { params: { id: string } }) => {
   let queryId: string | number = params.id.split("-").splice(-1)[0];
@@ -18,10 +16,8 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
     <div className="sample-ecommerce">
       <BreadCrumbNavbar />
       <SingleProductSection productId={productId} />
-      {/* <ProductNavbar /> */}
       <SinglePost />
       <ProductSection isNotHomePage={true} />
-      {/* <ClientsSection /> */}
     </div>
   );
 };
