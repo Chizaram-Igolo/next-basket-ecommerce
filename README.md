@@ -13,9 +13,13 @@ This project is a frontend implementation of a simple e-commerce website, where 
 - Pagination on the same page by clicking "Load More Products" without refreshing.
 - Responsive design with static header, footer, and additional sections.
 
-| Demo 1                       | Demo 2                       |
-| ---------------------------- | ---------------------------- |
-| ![Demo 1](public/demo-1.gif) | ![Demo 2](public/demo-2.gif) |
+| Home Page Demo               |
+| ---------------------------- |
+| ![Demo 1](public/demo-1.gif) |
+
+| Pagination Demo              |
+| ---------------------------- |
+| ![Demo 2](public/demo-2.gif) |
 
 #### 2. Product Details Page
 
@@ -38,9 +42,13 @@ This project is a frontend implementation of a simple e-commerce website, where 
 - Similar to the cart popup, displaying items added to the wishlist.
 - Users can remove items from their wishlist.
 
-| Demo 3                       | Demo 4                       |
-| ---------------------------- | ---------------------------- |
-| ![Demo 3](public/demo-3.gif) | ![Demo 4](public/demo-4.gif) |
+| Product Page & Add to Wishlist Demo |
+| ----------------------------------- |
+| ![Demo 3](public/demo-3.gif)        |
+
+| Add to Cart & View Popups Demo |
+| ------------------------------ |
+| ![Demo 4](public/demo-4.gif)   |
 
 ### Data Persistence
 
