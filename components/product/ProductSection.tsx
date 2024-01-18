@@ -5,6 +5,8 @@ import ProductCard from "./ProductCard";
 import ButtonMUI from "../ButtonMUI";
 import ProductService from "@/utils/apiUtils";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { makeUrlFriendly } from "@/utils/helperFunctions";
 
 interface IPostSection {
   isNotHomePage?: boolean;
@@ -69,17 +71,24 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 gap-5 p-6 mt-4 max-md:max-w-full">
           {products.length > 0 &&
             products.map((p, idx) => (
-              <ProductCard
-                id={p.id}
-                title={p.title}
-                category={p.category}
-                price={p.price}
-                discountPercentage={p.discountPercentage}
-                thumbnail={p.thumbnail}
-                stock={p.stock}
-                idx={idx}
+              <Link
+                href={`/product/${p.id}`}
+                as={`/product/${makeUrlFriendly(p.title)}-${p.id}`}
+                className="no-underline"
                 key={p.title + p.id}
-              />
+              >
+                <ProductCard
+                  id={p.id}
+                  title={p.title}
+                  category={p.category}
+                  price={p.price}
+                  discountPercentage={p.discountPercentage}
+                  thumbnail={p.thumbnail}
+                  stock={p.stock}
+                  idx={idx}
+                  key={p.title + p.id}
+                />
+              </Link>
             ))}
         </div>
 

@@ -37,7 +37,6 @@ const ProductCard: React.FC<IProductCard> = ({
           </div>
         </span>
       </span>
-      {/* </div> */}
     </div>
   );
 };

@@ -125,11 +125,11 @@ function PostSection() {
                   </span>
                   <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                     Loudest à la Madison #1 <br />
-                    (L'integral)
+                    (L&apos;integral)
                   </div>{" "}
                   <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                     We focus on ergonomics and meeting <br />
-                    you where you work. It's only a <br />
+                    you where you work. It&apos;s only a <br />
                     keystroke away.
                   </div>
                   <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
@@ -200,11 +200,11 @@ function PostSection() {
                   </span>
                   <div className="text-slate-800 text-xl leading-8 tracking-wide mt-2.5">
                     Loudest à la Madison #1 <br />
-                    (L'integral)
+                    (L&apos;integral)
                   </div>{" "}
                   <div className="text-neutral-500 text-sm leading-5 tracking-wide mt-2.5">
                     We focus on ergonomics and meeting <br />
-                    you where you work. It's only a <br />
+                    you where you work. It&apos;s only a <br />
                     keystroke away.
                   </div>
                   <div className="justify-between items-stretch flex w-full gap-5 mt-2.5 py-4">
