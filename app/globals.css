@@ -299,7 +299,7 @@ body {
 }
 
 .sample-ecommerce .hero-img-div-1 {
-  background-image: url(../public/card-cover-5-1.jpg);
+  /* background-image: url(../public/card-cover-5-1.jpg); */
   background-size: 100% 100%;
   height: 616px;
   position: relative;
@@ -334,7 +334,7 @@ body {
 }
 
 .sample-ecommerce .overlap-group.hero-img-div-2 {
-  background-image: url(../public/card-cover-6-1.jpg);
+  /* background-image: url(../public/card-cover-6-1.jpg); */
   background-position: 50% 50%;
   background-size: cover;
   height: 300px;
@@ -411,14 +411,14 @@ body {
 }
 
 .sample-ecommerce .hero-img-div-3 {
-  background-image: url(../public/card-cover-6-2.jpg);
+  /* background-image: url(../public/card-cover-6-2.jpg); */
   background-position: 50% 50%;
   background-size: cover;
   height: 300px;
 }
 
 .sample-ecommerce .hero-img-div-4 {
-  background-image: url(../public/card-cover-7.jpg);
+  /* background-image: url(../public/card-cover-7.jpg); */
   background-position: 50% 50%;
   background-size: cover;
   height: 300px;
