@@ -6,6 +6,7 @@ import Wishlist from "../widgets/WishList";
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -51,7 +52,12 @@ export default function Navbar() {
     <header className="flex items-center justify-between gap-5 max-md:flex-wrap">
       <div className="flex justify-between gap-5 my-auto px-5 pl-8 items-start max-md:max-w-full max-md:flex-wrap">
         <div className="text-slate-800 text-2xl font-bold leading-8 tracking-normal">
-          Bandage
+          <Link
+            href="/"
+            className="text-slate-800 text-center font-bold leading-6 tracking-wide self-stretch"
+          >
+            Bandage
+          </Link>
         </div>
         <div className="items-start flex justify-between gap-3 px-px py-1.5">
           <a
@@ -118,22 +124,23 @@ export default function Navbar() {
             height={0}
             sizes="100vw"
             style={{ width: "16px", height: "16px" }}
-            className="aspect-square object-contain object-center w-3 overflow-hidden shrink-0 max-w-full my-auto"
+            className="border-2 aspect-square object-contain object-center w-3 overflow-hidden shrink-0 max-w-full my-auto"
           />
           <div className="text-sky-500 text-center text-sm font-bold leading-6 tracking-wide self-stretch grow whitespace-nowrap">
             Login / Register
           </div>
+
+          <Image
+            loading="lazy"
+            src="/search-icon.svg"
+            alt="Search Icon"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "16px", height: "16px" }}
+            className="border-2 aspect-square object-contain object-center w-3 overflow-hidden shrink-0 max-w-full my-auto"
+          />
         </div>
-        <Image
-          loading="lazy"
-          src="/search-icon.svg"
-          alt="Search Icon"
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "16px", height: "16px" }}
-          className="aspect-square object-contain object-center w-[46px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto"
-        />
         <div
           className="items-stretch self-center inline-flex gap-1.5 my-auto p-4 rounded-[37px] cursor-pointer"
           // onClick={handleOpenCart}

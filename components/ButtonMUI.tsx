@@ -2,18 +2,26 @@ import Button from "@mui/material/Button";
 
 interface IButtonMUI {
   text: string;
-  onClick: () => void;
-  disabled: boolean;
+  variant: "outlined" | "contained" | "text";
+  onClick?: () => void;
+  disabled?: boolean;
+  className?: string;
 }
 
-const ButtonMUI: React.FC<IButtonMUI> = ({ text, onClick, disabled }) => {
+const ButtonMUI: React.FC<IButtonMUI> = ({
+  text,
+  variant,
+  onClick,
+  disabled,
+  className,
+}) => {
   return (
     <Button
-      variant="outlined"
+      variant={variant}
       onClick={onClick}
       disabled={disabled}
       size="large"
-      className="w-80 h-12"
+      className={`w-80 h-12 ${className}`}
     >
       {text}
     </Button>

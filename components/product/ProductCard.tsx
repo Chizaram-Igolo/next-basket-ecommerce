@@ -18,7 +18,7 @@ const ProductCard: React.FC<IProductCard> = ({
       <img
         loading="lazy"
         srcSet={thumbnail}
-        className="object-contain object-center w-full h-[200px] aspect-[0.77] "
+        className="object-contain object-center w-full h-[200px] aspect-[0.77]"
       />
 
       <span className="items-center self-stretch inline-flex flex-col px-5 py-8">

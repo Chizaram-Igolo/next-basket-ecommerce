@@ -16,7 +16,7 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <div className="sample-ecommerce">
-      {/* <BreadCrumbNavbar /> */}
+      <BreadCrumbNavbar />
       <SingleProductSection productId={productId} />
       {/* <ProductNavbar /> */}
       <SinglePost />

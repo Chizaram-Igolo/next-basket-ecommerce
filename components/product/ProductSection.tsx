@@ -98,6 +98,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
             {hasMore && (
               <ButtonMUI
                 text="LOAD MORE PRODUCTS"
+                variant="outlined"
                 onClick={loadMoreProducts}
                 disabled={loading}
               />
