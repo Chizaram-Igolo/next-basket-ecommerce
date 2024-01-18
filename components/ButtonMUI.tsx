@@ -8,7 +8,13 @@ interface IButtonMUI {
 
 const ButtonMUI: React.FC<IButtonMUI> = ({ text, onClick, disabled }) => {
   return (
-    <Button variant="outlined" onClick={onClick} disabled={disabled}>
+    <Button
+      variant="outlined"
+      onClick={onClick}
+      disabled={disabled}
+      size="large"
+      className="w-80 h-12"
+    >
       {text}
     </Button>
   );

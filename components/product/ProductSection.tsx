@@ -84,7 +84,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
         </div>
 
         {!isNotHomePage && (
-          <div className="mx-auto mt-32">
+          <div className="mx-auto mt-24">
             {loading && <p>Loading...</p>}
             {hasMore && (
               <ButtonMUI
