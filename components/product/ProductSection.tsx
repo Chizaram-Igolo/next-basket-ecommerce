@@ -78,6 +78,7 @@ const ProductSection: React.FC<IPostSection> = ({ isNotHomePage }) => {
                 thumbnail={p.thumbnail}
                 stock={p.stock}
                 idx={idx}
+                key={p.title + p.id}
               />
             ))}
         </div>
