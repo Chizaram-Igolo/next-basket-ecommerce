@@ -6,6 +6,7 @@ interface IButtonMUI {
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
+  size?: "large" | "medium" | "small";
 }
 
 const ButtonMUI: React.FC<IButtonMUI> = ({
@@ -14,13 +15,14 @@ const ButtonMUI: React.FC<IButtonMUI> = ({
   onClick,
   disabled,
   className,
+  size,
 }) => {
   return (
     <Button
       variant={variant}
       onClick={onClick}
       disabled={disabled}
-      size="large"
+      size={size}
       className={`w-80 h-12 ${className}`}
     >
       {text}
